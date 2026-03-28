@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Советы стоматолога: здоровье ваших зубов</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f0f8ff; /* Нежно-голубой фон */
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Шапка сайта */
+        header {
+            background: linear-gradient(135deg, #1e90ff 0%, #87ceeb 100%);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+        
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .dentist-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Навигация по разделам */
+        .nav-sections {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .nav-btn {
+            background-color: white;
+            color: #1e90ff;
+            border: 2px solid #1e90ff;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .nav-btn:hover {
+            background-color: #1e90ff;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Основное содержимое */
+        main {
+            background-color: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: #1e6bb8;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f8ff;
+            text-align: center;
+        }
+        
+        /* Стили для вопросов и ответов */
+        .qa-section {
+            margin-bottom: 50px;
+        }
+        
+        .question {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #1e6bb8;
+            margin-bottom: 15px;
+            line-height: 1.4;
+            padding-left: 15px;
+            border-left: 4px solid #1e90ff;
+        }
+        
+        .answer {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.03);
+        }
+        
+        /* Стили для рекомендаций */
+        .recommendations-section {
+            margin-top: 60px;
+        }
+        
+        .recommendation-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .recommendation-item {
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            background-color: #f0f8ff;
+            border-radius: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            transition: transform 0.2s ease;
+        }
+        
+        .recommendation-item:hover {
+            transform: translateX(5px);
+            background-color: #e6f2ff;
+        }
+        
+        .recommendation-icon {
+            color: #1e90ff;
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+        
+        /* Подвал */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #e0e0e0;
+            margin-top: 40px;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .nav-sections {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            
+            main {
+                padding: 25px;
+            }
+            
+            .question {
+                font-size: 1.4rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .question {
+                font-size: 1.2rem;
+            }
+            
+            .answer {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="dentist-icon">
+                    <i class="fas fa-tooth"></i>
+                </div>
+                <h1>Советы стоматолога: здоровье ваших зубов</h1>
+                <p class="subtitle">От Мыцык Анастасии Викторовны</p>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="nav-sections">
+            <button class="nav-btn" onclick="scrollToSection('qa')">
+                <i class="fas fa-question-circle"></i> Вопрос-ответ
+            </button>
+            <button class="nav-btn" onclick="scrollToSection('recommendations')">
+                <i class="fas fa-check-circle"></i> Рекомендации
+            </button>
+        </div>
+        
+        <main>
+            <section class="qa-section" id="qa">
+                <h2 class="section-title">Вопрос-ответ</h2>
+                
+                <div class="qa-item">
+                    <div class="question">С какого возраста ребенок может чистить зубы самостоятельно эффективно? Как родители должны контролировать процесс до этого момента?</div>
+                    <div class="answer">Ребенок может пробовать чистить зубы самостоятельно с 2-3 лет, но полноценный контроль со стороны родителей необходим до 7-10 лет. До 5-6 лет родители должны обязательно дочищать зубы после ребенка, так как у детей не достаточно развита мелкая моторика для тщательного удаления налёта.</div>
+                </div>
+                
+                <div class="qa-item">
+                    <div class="question">Существует ли генетическая предрасположенность к кариесу или заболеваниям десен, и можно ли ей противостоять усиленной гигиеной?</div>
+                    <div class="answer">Да, генетическая предрасположенность к кариесу и заболеваниям десен существует. Наследственность влияет на структуру эмали, состав слюны и иммунный ответ. Усиленная гигиена, регулярная профессиональная чистка зубов и контроль питания способны минимизировать риски.</div>
+                </div>
+                
+                <div class="qa-item">
+                    <div class="question">Как часто на самом деле нужна профессиональная гигиена, и от чего этот интервал зависит?</div>
+                    <div class="answer">Профессиональная гигиена полости рта в среднем необходима 1 раз в 6 мес. Этот интервал обоснован временем созревания бактериальной биоплёнки (5-6 мес), после чего налёт начинает разрушать эмаль. При ношении брекетов, скученности зубов, болезнях десен или курении, частота увеличивается до 1 раза в 3-4 мес.</div>
+                </div>
+                
+                <div class="qa-item">
+                    <div class="question">Правда ли, что жевательная резинка - это полезный инструмент гигиены, и в каких ситуациях?</div>
+                    <div class="answer">Да, жевательная резинка полезна как вспомогательное средство гигиены, но только без сахара и при использовании в течении 5-10 минут после еды. Она стимулирует слюноотделение, нейтрализует кислоты, очищает от налёта и помогает освежить дыхание, когда нет возможности почистить зубы, но не заменяет щетку и нить.</div>
+                </div>
+                
+                <div class="qa-item">
+                    <div class="question">Какие есть реальные, работающие советы по минимизации вреда от кофе, красного вина и чая для цвета зубов без отказа от них?</div>
+                    <div class="answer">Для сохранения белизны зубов без отказа от кофе, чая, вина, главное - минимизировать время контакта пигментов с эмалью: пейте через трубочку, сразу после полощите рот с водой, добавляйте молоко и используйте отбеливающие пасты. Не чистите зубы сразу после кислых напитков - подождите 30-60 минут, чтобы эмаль не повредилась.</div>
+                </div>
+                
+                <div class="qa-item">
+                    <div class="question">Какой режим питания (Например, частые перекусы или редкие плотные приемы пищи) более вреден для зубов и почему?</div>
+                    <div class="answer">Частые перекусы (особенно углеводные или сладкой пищей) намного вреднее для зубов, чем редкие плотные приемы пищи. Постоянное употребление пищи не дает эмали восстанавливаться, удерживая кислотно-щелочной баланс во рту в кислой зоне, что вызывает кариес и разрушает зубы.</div>
+                </div>
+                
+                <div class="qa-item">
+                    <div class="question">Очищение языка: насколько это обязательно с медицинской точки зрения и какие скребки/щетки наиболее эффективны?</div>
+                    <div class="answer">Очищение языка - важная процедура, так как на нем скапливается до 50% бактерий полости рта, вызывающих неприятный запах (галитоз), налёт и кариес. С медицинской точки зрения это не обязательно для всех, но критично для людей с налетом, а также для борьбы с запахом. Самыми эффективными считаются специальные скребки, особенно металлические, обеспечивающие глубокую чистку.</div>
+                </div>
+                
+                <div class="qa-item">
+                    <div class="question">Как правильно использовать зубную нить? Можно ли травмировать дёсны? С какого возраста ей можно пользоваться?</div>
+                    <div class="answer">Зубная нить используется один раз в день, предпочтительнее перед сном, при удалении налёта между зубами. Нить длиной 30-40см наматывают на средние пальцы, аккуратно заводят в межзубный промежуток, изгибают буквой «С» и плавно водят вверх-вниз. Да, нитью можно травмировать дёсны при резких движениях. Обычно рекомендуют начинать использование с 8-10 лет под контролем родителей.</div>
+                </div>
+                
+                <div class="qa-item">
+                    <div class="question">Существуют ли объективные доказательства пользы таких народных или модных методов, как чистка зубов активированным углем, содой, лимоном или маслом?</div>
+                    <div class="answer">Объективных научных доказательств пользы чистки зубов углем, содой, лимоном или маслом нет, более того, стоматологи считают эти методы опасными. Они действуют как агрессивные вещества, которые снимают налёт вместе с эмалью, что приводит к её истончению, высокой чувствительности, трещинам и воспалению десен.</div>
+                </div>
+                
+                <div class="qa-item">
+                    <div class="question">Как должна меняться гигиена полости рта с возрастом: кочевые различия в уходе для ребенка 6 лет, подростка 16 лет, взрослого 40 лет и человека 70+?</div>
+                    <div class="answer">Гигиена полости рта должна адаптироваться к возрастным изменениям: от обучения чистки и защиты эмали у детей (6 лет) к контролю налёта и ортодонтии у подростка (16 лет), профилактике заболеваний десен у взрослых (40 лет) и бережному уходу за протезами /остатками зубов у пожилых (70+) с обязательными профессиональными осмотрами каждые 3-6 месяцев.</div>
+                </div>
+                
+                <div class="qa-item">
+                    <div class="question">Какая самая распространённая и критичная ошибка в технике чистки зубов, которую вы видите у 90% пациентов?</div>
+                    <div class="answer">Горизонтальные «подметающие» движения «вправо-влево». Они не удаляют налёт из под десневого края и между зубами, а лишь размазывают его. Сильный нажим и чрезмерное давление травмирует дёсны. Пропуск зон. Неправильный угол наклона щетки. Пренебрежение межзубным пространством.</div>
+                </div>
+                
+                <div class="qa-item">
+                    <div class="question">Электрическая зубная щетка VS обычная: при каких условиях каждая предпочтительнее? Существует ли "передозировка" чистки электрической щеткой?</div>
+                    <div class="answer">Электрическая щетка эффективнее удаляет налёт и подходит для людей с брекетами, артиром или тех, спешит при чистке. Обычная (мануальная) щетка предпочтительнее при высокой чувствительности десен. Да, существует «передозировка» электрической зубной щёткой и может привести к стиранию эмали, повышенной чувствительности зубов и травмам десен.</div>
+                </div>
+                
+                <div class="qa-item">
+                    <div class="question">Влияет ли кислотность самого ополаскивателя рта на безопасность для эмали? На что смотреть в составе?</div>
+                    <div class="answer">Да, кислотность ополаскивателя критически влияет на безопасность эмали: если pH ниже 5.5, средство может вызвать размягчение эмали, а при основном использовании - эрозию. Безопасным считаются нейтральные или щелочные ополаскиватели (pH > 6). В составе следует избегать спирта и кислот.</div>
+                </div>
+                
+                <div class="qa-item">
+                    <div class="question">Как выбрать зубную пасту для человека, часто употребляющего кислые продукты? На какие компоненты стоит обратить внимание?</div>
+                    <div class="answer">При частом употреблении кислых продуктов, эмаль разрушается, поэтому нужна зубная паста с низким уровнем абразивности. Главные компоненты: фториды (1350-1500ppm), гидроксиапатит, кальций, ксилит.</div>
+                </div>
+            </section>
+            
+            <section class="recommendations-section" id="recommendations">
+                <h2 class="section-title">Рекомендации</h2>
+                
+                <ul class="recommendation-list">
+                    <li class="recommendation-item">
+                        <i class="fas fa-toothbrush recommendation-icon"></i>
+                        <span>Держать щетку под углом 45° и двигаться от десен к краю зубов.</span>
+                    </li>
+                    <li class="recommendation-item">
+                        <i class="fas fa-clock recommendation-icon"></i>
+                        <span>Чистить зубы не менее 2 минут.</span>
+                    </li>
+                    <li class="recommendation-item">
+                        <i class="fas fa-sync-alt recommendation-icon"></i>
+                        <span>Менять щетку раз в три месяца.</span>
+                    </li>
+                    <li class="recommendation-item">
+                        <i class="fas fa-stethoscope recommendation-icon"></i>
+                        <span>Регулярно посещать стоматолога. Дети: каждые 3-4 месяца. Взрослые: каждые полгода.</span>
+                    </li>
+                    <li class="recommendation-item">
+                        <i class="fas fa-wine-glass-alt recommendation-icon"></i>
+                        <span>Напитки, которые окрашивают зубы или имеют высокую кислотность, стоит пить через трубочку.</span>
+                    </li>
+                    <li class="recommendation-item">
+                        <i class="fas fa-hourglass-half recommendation-icon"></i>
+                        <span>Не чистите зубы сразу после кислых напитков - подождите 30-60 минут.</span>
+                    </li>
+                    <li class="recommendation-item">
+                        <i class="fas fa-utensils recommendation-icon"></i>
+                        <span>Редкие плотные приёмы пищи полезнее для состояния зубов.</span>
+                    </li>
+                    <li class="recommendation-item">
+                        <i class="fas fa-teeth recommendation-icon"></i>
+                        <span>Внимательнее чистите межзубные промежутки и не пропускайте зоны.</span>
+                    </li>
+                    <li class="recommendation-item">
+                        <i class="fas fa-hand-paper recommendation-icon"></i>
+                        <span>Не стоит давить на зубную щетку.</span>
+                    </li>
+                    <li class="recommendation-item">
+                        <i class="fas fa-chewing-gum recommendation-icon"></i>
+                        <span>Если нет возможности почистить зубы - используйте жевательную резинку без сахара в течении 5-10 минут после еды.</span>
+                    </li>
+                </ul>
+            </section>
+        </main>
+        
+        <footer>
+            <p>© 2026 Советы стоматолога: здоровье ваших зубов. Все рекомендации носят ознакомительный характер.</p>
+            <p>Проконсультируйтесь со специалистом для индивидуального подхода к уходу за полостью рта.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Функция для плавной прокрутки к разделам
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                window.scrollTo({
+                    top: section.offsetTop - 20,
+                    behavior: 'smooth'
+                });
+            }
+        }
+        
+        // Добавляем интерактивность кнопкам навигации
+        document.addEventListener('DOMContentLoaded', function() {
+            const navButtons = document.querySelectorAll('.nav-btn');
+            
+            navButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Убираем активный класс у всех кнопок
+                    navButtons.forEach(btn => {
+                        btn.style.backgroundColor = 'white';
+                        btn.style.color = '#1e90ff';
+                    });
+                    
+                    // Добавляем активный класс к нажатой кнопке
+                    this.style.backgroundColor = '#1e90ff';
+                    this.style.color = 'white';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
